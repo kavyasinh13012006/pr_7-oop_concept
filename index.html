@@ -1,0 +1,59 @@
+<script type="text/javascript">
+    class bank {
+        constructor(id, password, name, balacen) {
+            this.id = id
+            this.password = password
+            this.name = name
+            this.balacen = balacen
+        }
+        withdraw() {
+            let useracn = parseInt(prompt("Hello customer enter account number"))
+            let userpass = parseInt(prompt("Hello customer enter password number"))
+            let amt = parseInt(prompt("withdraw ammout"))
+            if (this.id == useracn && this.password == userpass) {
+                if (this.balacen >= amt) {
+                    this.balacen = this.balacen - amt
+                    console.log(`Customer name :- ${this.name}`)
+                    console.log(`Total balacen :- ${this.balacen}`)
+                } else {
+                    console.log("plz... enter MINMUM ammout");
+                }
+            }
+            else {
+                console.log("plz.... enter vaild account number or password");
+            }
+        }
+        deposit() {
+            let useracn = parseInt(prompt("Hello customer enter account number"))
+            let userpass = parseInt(prompt("Hello customer enter password number"))
+            let amt = parseInt(prompt("deposit ammout"))
+            if (amt > 0) {
+                this.balacen = this.balacen + amt
+                console.log(`Customer name :- ${this.name}`)
+                console.log(`Total balacen :- ${this.balacen}`)
+            } else {
+                console.log(`plz....your ammout deposit minmum 1 Rupee..`);
+            }
+        }
+        ditail() {
+            let useracn = parseInt(prompt("Hello customer enter account number"))
+            let userpass = parseInt(prompt("Hello customer enter password number"))
+            console.log(`Customer ID :- ${this.id}`)
+            console.log(`Total password :- ....`)
+            console.log(`Total name :- ${this.name}`)
+            console.log(`Total balacen :- ${this.balacen}`)
+        }
+    }
+    let user_1 = new bank(124421, 3000, "MR.SRK ( Shive-Ram-Krishna varama )", 5000)
+    console.log(`Press 1 Money withdraw :-`)
+    console.log(`Press 2 Money deposit :-`)
+    console.log(`Press 3 Money detail :-`)
+    let ch = parseInt(prompt("Press a number:-"))
+    if (ch == 1) {
+        user_1.withdraw()
+    } else if (ch == 2) {
+        user_1.deposit()
+    } else {
+        user_1.ditail()
+    }
+</script>
